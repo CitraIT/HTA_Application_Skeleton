@@ -1,0 +1,255 @@
+<HTML>
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Application Title</title>
+
+<STYLE type="text/css">
+    
+A:link
+{
+	text-decoration: none;
+    color: #707070;
+}
+
+A:visited
+{
+	text-decoration: none;
+	color: #707070;
+}
+
+A:hover
+{
+	text-decoration: underline;
+	color: #707070;
+}
+
+A:active
+{
+	text-decoration: underline;
+	color: #707070;
+}
+
+BODY	
+{
+    background-color: #ffffff;
+	/*
+    background-image: url(include/page_background.png);
+    background-repeat: no-repeat;
+	*/
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+	
+DIV
+{
+}
+
+HR
+{
+    width: 100%;
+    height: 1px;
+    color: #707070;
+    margin-top: 5px;
+}
+	
+TD
+{
+}
+
+IMG 
+{
+	border: 0px;
+}
+
+#LocVSExpressLogo   
+{
+	top: 10px;
+	left: 10px;
+	position: relative;
+}
+
+#LayoutBlockMain
+{
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 8px;
+}
+
+#LayoutBlockTeaser
+{
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-right: 8px;
+}
+
+.TextNormal
+{
+	font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+	font-size: 9.25pt;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #707070;
+}
+
+.TextHeader1
+{
+	font-family: Segoe Semibold, Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+	font-size: 12.5pt;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #4C89BD;
+}
+
+.TextHeader2
+{
+	font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+	font-size: 11pt;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #4C89BD;
+}
+
+.TextTeaser 
+{
+	display: none;
+}
+
+.TextBold
+{
+	font-weight: bold;
+}
+
+.TextUnderline
+{
+	text-decoration: underline;
+}
+
+.TextCommand
+{
+	font-family: Verdana, Segoe UI, Segoe, Tahoma, Arial, Helvetica;
+	font-size: 9pt;
+	font-weight: bold;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #707070;
+}
+
+.IconLinkArrow  
+{
+	margin-right: 10px
+}
+
+</STYLE>
+
+<HTA:APPLICATION 
+APPLICATIONNAME = "HTA Application Template"
+SINGLEINSTANCE = "yes"
+ICON = "path/to/icon.ico" 
+SCROLL = "no"
+MAXIMIZEBUTTON = "no"
+NAVIGABLE = "no"
+SELECTION = "no"
+CONTEXTMENU = "no"
+BORDER = "thin"
+INNERBORDER = "no"
+></HTA:APPLICATION>
+
+<SCRIPT FOR="window" EVENT="onload">
+
+onerror=handleLaunchErr;
+initialize();
+
+</SCRIPT>
+
+<SCRIPT>
+
+// Event handler for window.onload()
+function initialize()   {
+    initWindow();
+    document.body.style.visibility = "visible";
+}
+
+// Applies initial state settings for the application
+function initWindow()   {
+    // delay the call and avoid 'Access denied' exception
+    setTimeout(setSize1, 0);
+}
+
+function setSize1(){
+    setWindowSize(725, 585);
+}
+
+function setSize2(){
+    setWindowSize(725, document.body.scrollHeight + 25);
+}
+
+
+
+// Opens a new window
+function popWindow(url, name)
+{
+	var wndPopup = window.open(url,name,"");
+	// Bring new window to foreground
+	if(wndPopup) wndPopup.focus();
+}
+
+// Resizes the current window
+function setWindowSize(width, height){
+    window.resizeTo(width, height);
+}
+
+
+function launch(program){
+(new ActiveXObject('WScript.Shell')).Run(program);void(0);
+}
+
+function handleLaunchErr(msg,url,l)
+{
+    alert(msg);
+    return true;
+}
+
+// Immediate execution
+//
+
+</SCRIPT>
+ 
+</HEAD>
+
+<BODY bgcolor="#000000" onload="">
+
+<!-- MASTER LAYOUT CONTAINER -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+<TR height="100%">
+<TD width="180" align="left" valign="top" nowrap="nowrap"><IMG id="" src="" width="150" height="80" border="0" /></td>
+<TD width="510" align="left" valign="top" id="LayoutBlockMain">
+<DIV class="TextHeader1" id="" style="margin-bottom: 2px;">Welcome to HTA Skeleton</DIV>
+<DIV class="TextNormal" id="">A simple template for hta applications<BR /><BR /></DIV>
+</TD>
+</TR>
+<TR height="325">
+<TD width="180" align="left" valign="top" id="LayoutBlockTeaser">
+Test
+</TD>
+<TD width="510" align="left" valign="top"
+><A href="#" onClick="javascript:launch('setup.exe')"><IMG src="" id="" width="510" height="83" border="0" onclick="window.focus();" />
+</TD>
+</TR>
+<TR height="25">
+<TD align="left">
+<A id="" class="TextCommand" href="#" onclick="window.focus(); popWindow('readme.htm', 'wndReadme');">View Readme file</A>
+</TD>
+<TD align="right">
+<A id="Loc_WebsiteLink" class="TextCommand" href="http://" target="_blank" onclick="window.focus();">put some link here<IMG src="" class="IconLinkArrow" border="0" width="15" height="15" align="absbottom" /></A>
+</TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>
